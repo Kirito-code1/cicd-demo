@@ -3,20 +3,20 @@ name: Мой Первый Конвейер
 # Робот сработает каждый раз, когда кто-то делает git push в ветку main
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   run-tests:
     runs-on: ubuntu-latest # Робот включит чистый Linux-сервер у себя в облаке
 
     steps:
-    - name: 1. Скачиваем наш код из репозитория
-      uses: actions/checkout@v4
+      - name: 1. Скачиваем наш код из репозитория
+        uses: actions/checkout@v4
 
-    - name: 2. Устанавливаем Node.js на этот Linux-сервер
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
+      - name: 2. Устанавливаем Node.js на этот Linux-сервер
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
-    - name: 3. Запускаем тесты командой npm test
-      run: npm test
+      - name: 3. Запускаем тесты командой npm test
+        run: npm testgit branch -M main
